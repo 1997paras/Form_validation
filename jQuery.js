@@ -2,7 +2,7 @@ $(document).ready(function()
 {
   $.validator.addMethod("special",function(value,char)
     {
-      return this.optional(char)||/^[a-z0-9\_]+$/i.test(value)},""),
+      return this.optional(char)||/^[a-z0-9\_]+@+$/i.test(value)},""),
   $.validator.addMethod("lower",function(value,char)
     {
       return this.optional(char)||/[a-z]+/.test(value)},""),
@@ -13,15 +13,16 @@ $(document).ready(function()
     {
       rules:{
         Email:{
-          required:(!0)
+         required:(!0)
         },
         Password:{
-          required:(!0),minlength:(8), special:(!0),lower:(!0),uper:(!0)          
+          required:(!0),minlength:(8), lower:(!0),uper:(!0)          
         }
         },
         messages:{
+         
           Password:{
-            required:"enter password", minlength:"length greater than 8", special:"no special char",lower:"one Lower case alphabet", uper:"one Upper case alphabet"
+            required:"enter password", minlength:"length greater than 8", lower:"one Lower case alphabet", uper:"one Upper case alphabet"
             }
           },
           highlight: function (char) {
