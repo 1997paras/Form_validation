@@ -1,3 +1,5 @@
+
+
 $(document).ready(function()
 {
   $.validator.addMethod("special",function(value,char)
@@ -25,6 +27,8 @@ $(document).ready(function()
             required:"enter password", minlength:"length greater than 8", lower:"one Lower case alphabet", uper:"one Upper case alphabet"
             }
           },
+         
+         
           highlight: function (char) {
             $(char).parent().addClass('error')
         },
@@ -33,4 +37,5 @@ $(document).ready(function()
         }
         }
         ) 
+  
 });  
